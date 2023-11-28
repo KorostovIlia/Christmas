@@ -8,9 +8,9 @@
         div {
             /* Button appearance */
             display: inline-block;
-            padding: 10px 20px;
+            padding: 30px 40px;
             margin: 5px;
-            font-size: 20px;
+            font-size: 60px;
             cursor: pointer;
             text-align: center;
             text-decoration: none;
@@ -130,13 +130,13 @@
 
         function sizeIncreaseHandler(){
             const size = parseFloat(window.getComputedStyle(this).fontSize);
-            this.style.fontSize = (size * 1.5) + 'px';
+            this.style.fontSize = (size * 1.2) + 'px';
         }
 
         function sizeDecreaseHandler(e){
             e.preventDefault();
             const size = parseFloat(window.getComputedStyle(this).fontSize);
-            this.style.fontSize = (size / 1.5) + 'px';
+            this.style.fontSize = (size / 1.2) + 'px';
         }
 
         function eventHandler() {
