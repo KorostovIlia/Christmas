@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advent Calender</title>
+    <style>
+        div {
+            /* Button appearance */
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #f44336;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+
+            /* Animation */
+            transition-duration: 0.4s;
+        }
+
+        div:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        div:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        body {
+
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            margin: 0;
+
+            background-image: url('Gold.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: 10px;
+        }
+
+        .grid-container > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+    </style>
+    <script type="module">
+
+    let divs = [];
+    for (let i = 1; i <= 24; i++) {
+        let newDiv = document.createElement("div");
+        newDiv.innerHTML = i;
+        newDiv.id = i;
+        divs.push(newDiv);
+    }
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    shuffleArray(divs);
+
+    let container = document.querySelector('.grid-container');
+    for (let div of divs) {
+        container.appendChild(div);
+        div.addEventListener("click", sizeIncreaseHandler);
+        div.addEventListener("click", eventHandler);
+    }
+
+
+    function sizeIncreaseHandler(){
+        const size = parseFloat(window.getComputedStyle(this).fontSize);
+        this.style.fontSize = (size * 1.1) + 'px';
+    }
+
+    function eventHandler() {
+        let today = new Date();
+        let day = today.getDate();
+        let month = today.getMonth() + 1; // JavaScript counts months from 0 to 11, so add 1 to get the correct month
+        if (month === 12 && day >= parseInt(this.id)) { // Check if the current date allows the div to be clicked
+            const size = parseFloat(window.getComputedStyle(this).fontSize);
+            this.style.fontSize = (size * 1.1) + 'px';
+            let randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+            this.innerHTML = randomEmoji;
+            this.removeEventListener("click", eventHandler);
+        }
+    }
+
+    let emojis = ["🔔","🎁","👶","🕯️","🎅","👼","⛪","🤶","✝️","❄","☃️",
+        "👪","⛄","🌟","🔥","🎄","🦌","🍪","🧦","‍🎄","🎈","🎉","🎊","🥳"]
+
+
+
+    </script>
+</head>
+<body class="grid-container">
+
+</body>
+</html>
