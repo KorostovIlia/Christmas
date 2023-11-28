@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,61 +62,95 @@
             align-items: center;
         }
 
-
     </style>
+
     <script type="module">
 
-    let divs = [];
-    for (let i = 1; i <= 24; i++) {
-        let newDiv = document.createElement("div");
-        newDiv.innerHTML = i;
-        newDiv.id = i;
-        divs.push(newDiv);
-    }
-
-    function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            let j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
+        let divs = [];
+        for (let i = 1; i <= 24; i++) {
+            let newDiv = document.createElement("div");
+            newDiv.innerHTML = i;
+            newDiv.id = i;
+            divs.push(newDiv);
         }
-    }
 
-    shuffleArray(divs);
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
 
-    let container = document.querySelector('.grid-container');
-    for (let div of divs) {
-        container.appendChild(div);
-        div.addEventListener("click", sizeIncreaseHandler);
-        div.addEventListener("click", eventHandler);
-    }
+        shuffleArray(divs);
+
+        let container = document.querySelector('.grid-container');
+        for (let div of divs) {
+            container.appendChild(div);
+            div.addEventListener("click", sizeIncreaseHandler);
+            div.addEventListener("contextmenu", sizeDecreaseHandler);
+            div.addEventListener("click", eventHandler);
+        }
 
 
-    function sizeIncreaseHandler(){
-        const size = parseFloat(window.getComputedStyle(this).fontSize);
-        this.style.fontSize = (size * 1.1) + 'px';
-    }
-
-    function eventHandler() {
-        let today = new Date();
-        let day = today.getDate();
-        let month = today.getMonth() + 1; // JavaScript counts months from 0 to 11, so add 1 to get the correct month
-        if (month === 12 && day >= parseInt(this.id)) { // Check if the current date allows the div to be clicked
+        function sizeIncreaseHandler(){
             const size = parseFloat(window.getComputedStyle(this).fontSize);
-            this.style.fontSize = (size * 1.1) + 'px';
-            let randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
-            this.innerHTML = randomEmoji;
-            this.removeEventListener("click", eventHandler);
+            this.style.fontSize = (size * 1.5) + 'px';
         }
-    }
 
-    let emojis = ["🔔","🎁","👶","🕯️","🎅","👼","⛪","🤶","✝️","❄","☃️",
-        "👪","⛄","🌟","🔥","🎄","🦌","🍪","🧦","‍🎄","🎈","🎉","🎊","🥳"]
+        function sizeDecreaseHandler(e){
+            e.preventDefault();
+            const size = parseFloat(window.getComputedStyle(this).fontSize);
+            this.style.fontSize = (size / 1.5) + 'px';
+        }
 
+        function eventHandler() {
+            let today = new Date();
+            let day = today.getDate();
+            let month = today.getMonth() + 1; // JavaScript counts months from 0 to 11, so add 1 to get the correct month
+            if (month === 12 && day >= parseInt(this.id)) { // Check if the current date allows the div to be clicked
+                const size = parseFloat(window.getComputedStyle(this).fontSize);
+                this.style.fontSize = (size * 1.1) + 'px';
+                let randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+                this.innerHTML = randomEmoji;
+                this.removeEventListener("click", eventHandler);
+            }
+        }
+
+        let emojis = ["🔔","🎁","👶","🕯️","🎅","👼","⛪","🤶","✝️","❄","☃️",
+            "👪","⛄","🌟","🔥","🎄","🦌","🍪","🧦","‍🎄","🎈","🎉","🎊","🥳"]
+
+
+        let songs = [
+            {name: "Louis Armstrong + Ella Fitzgerald", title: "I've Got My Love To Keep Me Warm", link: "https://www.youtube.com/watch?v=55lb7l4kcpM"},
+            {name: "Paul Anka", title: "It's Christmas Everywhere", link: "https://www.youtube.com/watch?v=e_RTSvkg2N8"},
+            {name: "Brenda Lee", title: "Rockin' Around The Christmas Tree", link: "https://www.youtube.com/watch?v=1qYz7rfgLWE"},
+            {name: "Frank Sinatra", title: "Let It Snow! Let It Snow! Let It Snow!", link: "https://www.youtube.com/watch?v=sE3uRRFVsmc"},
+            {name: "Nat King Cole", title: "The Christmas Song", link: "https://www.youtube.com/watch?v=hwacxSnc4tI"},
+            {name: "Ella Fitzgerald", title: "Jingle Bells", link: "https://www.youtube.com/watch?v=Z4VCjTecHyA"},
+            {name: "Dodie Stevens", title: "Merry, Merry Christmas Baby", link: "https://www.youtube.com/watch?v=iuL6iAlfihk"},
+            {name: "The Jack Halloran Singers", title: "We Wish You a Merry Christmas", link: "https://www.youtube.com/watch?v=YgwQtk-Jl8E"},
+            {name: "Bobby Helms", title: "Jingle Bell Rock", link: "https://www.youtube.com/watch?v=Gqwk7uR1BI8"},
+            {name: "Ella Fitzgerald", title: "Have Yourself A Merry Little Christmas", link: "https://www.youtube.com/watch?v=QsMrCFeacS0"},
+            {name: "Louis Armstrong, The Commanders", title: "Zat You, Santa Claus?", link: "https://www.youtube.com/watch?v=cqIpxPvhb_8"},
+            {name: "Bobby Darin", title: "Christmas Auld Lang Syne", link: "https://www.youtube.com/watch?v=qD2WRtjBR1k"},
+            {name: "Nat King Cole", title: "Deck The Halls", link: "https://www.youtube.com/watch?v=gMYDeQso0sA"},
+            {name: "Kingston Trio", title: "Bye Bye Thou Little Tiny Child", link: "https://www.youtube.com/watch?v=6W61yDj32_0"},
+            {name: "Frank Sinatra", title: "Silent Night", link: "https://www.youtube.com/watch?v=OvJ1HlJCd9Y"},
+            {name: "Eddie Fisher", title: "Here Comes Santa Claus", link: "https://www.youtube.com/watch?v=IsUZHbLr_x8"},
+            {name: "Louis Armstrong", title: "Winter Wonderland", link: "https://www.youtube.com/watch?v=BU1Zryq2m_c"},
+            {name: "Ella Fitzgerald", title: "Sleigh Ride", link: "https://www.youtube.com/watch?v=NRSvczD9840"},
+            {name: "Brenda Lee", title: "Papa Noel", link: "https://www.youtube.com/watch?v=K6WIIR8URJk"},
+            {name: "The Drifters", title: "White Christmas", link: "https://www.youtube.com/watch?v=bQ6LIS6m8qE"},
+            {name: "Nat King Cole", title: "I Saw Three Ships", link: "https://www.youtube.com/watch?v=UIcP-lcxQwg"},
+            {name: "Elvis Presley", title: "I’ll Be Home for Christmas", link: "https://www.youtube.com/watch?v=i3KO_EgKe5E"},
+            {name: "Eartha Kitt", title: "Santa Baby", link: "https://www.youtube.com/watch?v=5xQUTBpKil8"},
+            {name: "Johnny Preston", title: "A New Baby For Christmas", link: "https://www.youtube.com/watch?v=wEEYn98F2zk"},
+            {name: "Louis Armstrong, Benny Carter And His Orchestra", title: "Moments To Remember", link: "https://www.youtube.com/watch?v=EAQubz8f0-s"}
+        ]
 
 
     </script>
 </head>
 <body class="grid-container">
-
 </body>
 </html>
