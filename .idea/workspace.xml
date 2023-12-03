@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80b0e3c1-9def-4d11-b7a9-b03d6a936323" name="Changes" comment="erstellt 11. Monat ansonst 12.">
-      <change beforePath="$PROJECT_DIR$/calender.html" beforeDir="false" afterPath="$PROJECT_DIR$/calender.html" afterDir="false" />
+    <list default="true" id="80b0e3c1-9def-4d11-b7a9-b03d6a936323" name="Changes" comment="vergrößert die Divs">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,22 +31,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/iliak/IdeaProjects/Christmas",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/iliak/IdeaProjects/Christmas&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\iliak\IdeaProjects\Christmas" />
@@ -65,7 +65,8 @@
       <option name="presentableId" value="Default" />
       <updated>1701161658994</updated>
       <workItem from="1701161660127" duration="2051000" />
-      <workItem from="1701172360668" duration="15177000" />
+      <workItem from="1701172360668" duration="15733000" />
+      <workItem from="1701337435582" duration="38000" />
     </task>
     <task id="LOCAL-00001" summary="asdfasdf">
       <option name="closed" value="true" />
@@ -99,7 +100,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701189692769</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="vergrößert die Divs">
+      <option name="closed" value="true" />
+      <created>1701191937571</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701191937571</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,6 +119,7 @@
     <MESSAGE value="verkleinert die Boxen, wenn man mit der rechten Maustaste klickt" />
     <MESSAGE value="eingerichtet, dass jedes Mal, wenn man auf eine Schaltfläche klickt, eines meiner Lieblingsweihnachtslieder in einem neuen Tab geöffnet wird" />
     <MESSAGE value="erstellt 11. Monat ansonst 12." />
-    <option name="LAST_COMMIT_MESSAGE" value="erstellt 11. Monat ansonst 12." />
+    <MESSAGE value="vergrößert die Divs" />
+    <option name="LAST_COMMIT_MESSAGE" value="vergrößert die Divs" />
   </component>
 </project>

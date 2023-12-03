@@ -6,7 +6,7 @@
     <title>Advent Calender</title>
     <style>
         div {
-            /* Button appearance */
+
             display: inline-block;
             padding: 30px 40px;
             margin: 5px;
@@ -20,8 +20,6 @@
             border: none;
             border-radius: 15px;
             box-shadow: 0 9px #999;
-
-            /* Animation */
             transition-duration: 0.4s;
         }
 
@@ -143,7 +141,7 @@
             let today = new Date();
             let day = today.getDate();
             let month = today.getMonth() + 1; // JavaScript zählt die Monate von 0 bis 11, wir addieren also 1, um den richtigen Monat zu erhalten
-            if (month === 11 && day >= parseInt(this.id)) { // wir prüfen, ob das aktuelle Datum das Anklicken des Div erlaubt
+            if (month === 12 && day >= parseInt(this.id)) { // wir prüfen, ob das aktuelle Datum das Anklicken des Div erlaubt
                 this.innerHTML = this.dataset.emoji; // Das Emoji anzeigen, das an das Div gebunden ist
                 window.open(this.dataset.song, '_blank'); // Den Musiktitel in einer neuen Registerkarte öffnen
             }
